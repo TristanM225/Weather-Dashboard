@@ -1,17 +1,50 @@
-.container-fluid {
-    margin-top: 30px;
+
+
+body {
+
+    background-color: aqua !important;
+    text-align: center;
 }
 
-.row {
-    margin-top: 10px;
-    margin-bottom: 10px;
+p {
+    color: maroon;
+    background-color: rgb(238, 212, 12);
+    border-radius: 70%;
+    padding: 1%;
 }
 
-.card {
-    height: 200px;
-    background-color: #F9F9F9;
-    padding: 10px;
-    border-radius: 5px;
+h1 {
+    display: flex;
+  /* Defines how to distribute the empty space between child elements */
+  justify-content: center;
+  padding: 60px;
+  background: #13293d;
+  color: #fff;
+  border-radius: 70%;
 }
 
+h2 {
+    display: flex;
+  /* Defines how to distribute the empty space between child elements */
+  justify-content: center;
+  padding: 15px;
+  border-radius: 60%;
+  background: #13293d;
+  color: #fff;
 
+}
+
+button {
+
+  /* Defines how to distribute the empty space between child elements */
+  padding: 40px;
+  background: #13293d;
+  color: #fff;   
+  border-radius: 70%;
+}
+
+input {
+    padding: 15px;
+    color: #fff;  
+    border-radius: 70%;    
+}
