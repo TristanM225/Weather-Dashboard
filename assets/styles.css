@@ -1,0 +1,15 @@
+.container-fluid {
+    margin-top: 30px;
+}
+
+.row {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.card {
+    height: 200px;
+    background-color: #F9F9F9;
+    padding: 10px;
+    border-radius: 5px;
+}
