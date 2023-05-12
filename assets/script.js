@@ -29,11 +29,32 @@ function searchWeather() {
       console.error('Error fetching weather data:', error);
     });
 }
-function saveCityToLocalStorage(city) {
+// function to save the city to local storage
+function saveCityToLocalStorage( city ) {
+    // checks if there are any cities saved in local stoarage.
     var cities = localStorage.getItem('cities') ? JSON.parse(localStorage.getItem('cities')) : [];
-    if (!cities.includes(city)) {
-      cities.push(city);
-      localStorage.setItem('cities', JSON.stringify(cities));
+    // make sure we don't record a city twice
+    if (!cities.includes( city )) {
+      cities.push( city );
+      localStorage.setItem('cities', JSON.stringify( cities));
       console.log(saveCityToLocalStorage);
     }
   }
+  // when the window is loaded grab cities from local stoarage and display them
+  window.addEventListener('load', function() {
+    var cities = JSON.parse(localStorage.getItem('cities')) || [];
+  
+    var searchHistoryEl = document.getElementById('search-history');
+    searchHistoryEl.innerHTML = '';
+  // loop through each city to create a new p element.
+    cities.forEach(function(city) {
+      var pEl = document.createElement('p');
+      pEl.textContent = city;
+      pEl.addEventListener('click', function() {
+        getWeatherData(city);
+      });
+      //here we appened p to the searchHistoryEl to make every city appear on a new line
+      searchHistoryEl.appendChild(pEl);
+    });
+  });
+  
