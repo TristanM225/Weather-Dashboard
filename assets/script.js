@@ -1,6 +1,4 @@
 
-
-
 var apiKey = '4078f70a829ed0138a18ddaadd787e76';
 
 // here we are grabbing the button by the ID 'search'
@@ -25,8 +23,17 @@ function searchWeather() {
         <p>Temperature: ${data.main.temp} °C</p>
         <p>Description: ${data.weather[0].description}</p>
       `;
+      saveCityToLocalStorage(data.name);
     })
     .catch(error => {
       console.error('Error fetching weather data:', error);
     });
 }
+function saveCityToLocalStorage(city) {
+    var cities = localStorage.getItem('cities') ? JSON.parse(localStorage.getItem('cities')) : [];
+    if (!cities.includes(city)) {
+      cities.push(city);
+      localStorage.setItem('cities', JSON.stringify(cities));
+      console.log(saveCityToLocalStorage);
+    }
+  }
